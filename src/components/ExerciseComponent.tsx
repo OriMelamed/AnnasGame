@@ -32,8 +32,8 @@ function ExerciseComponent() {
   };
 
   return (
-    <div className=" inline-block justify-center items-center bg-gray-50">
-      <div className=" inline-block border border-black justify-center items-center">
+    <div className="rounded-3xl overflow-hidden justify-center items-center bg-gray-50">
+      <div className=" inline-block justify-center items-center">
         <ExerciseHeader />
         {exercise && (
           <div>
@@ -51,6 +51,16 @@ function ExerciseComponent() {
           <h3>Score: {score}</h3>
         </div>
       </div>
+      <br />
+      <button
+        className="flex border border-black rounded-md shadow-lg justify-center items-center my-5 px-5 py-2 bg-slate-300 mx-auto"
+        onClick={() => {
+          setScore(0);
+          generateNewExercise();
+        }}
+      >
+        משחק חדש
+      </button>
     </div>
   );
 }
