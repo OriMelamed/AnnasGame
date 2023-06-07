@@ -9,6 +9,7 @@ interface Exercise {
   number2: number;
   answer: number;
   options: number[];
+  sign: string;
 }
 
 function ExerciseComponent() {
@@ -40,6 +41,7 @@ function ExerciseComponent() {
             <ExerciseNumbers
               number1={exercise.number1}
               number2={exercise.number2}
+              sign={exercise.sign}
             />
             <AnswerOptions
               options={exercise.options}

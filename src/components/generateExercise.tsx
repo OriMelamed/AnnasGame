@@ -3,12 +3,15 @@ interface Exercise {
   number2: number;
   answer: number;
   options: number[];
+  sign: string;
 }
 
 function generateExercise(): Exercise {
   const number1 = Math.floor(Math.random() * 10) + 1;
   const number2 = Math.floor(Math.random() * 10) + 1;
-  const answer = number1 + number2;
+  const random = Math.random();
+  const sign = random < 0.5 ? "-" : "+";
+  const answer = sign == "+" ? number1 + number2 : number1 - number2;
 
   // Generate four answer options (including the correct answer)
   const options: number[] = new Array(4);
@@ -32,6 +35,7 @@ function generateExercise(): Exercise {
     number2,
     answer,
     options,
+    sign,
   };
 }
 export default generateExercise;
